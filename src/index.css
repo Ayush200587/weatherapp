@@ -1,0 +1,152 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+:root {
+  font-family: 'Press Start 2P', system-ui;
+  line-height: 1.5;
+  color-scheme: light;
+}
+
+.pixel-container {
+  @apply bg-opacity-20 backdrop-blur-sm bg-[#E8DCC4] rounded-xl p-6 border-4 border-[#B4A284];
+  box-shadow: 0 0 20px rgba(180, 162, 132, 0.3);
+}
+
+.search-container {
+  @apply flex gap-2;
+}
+
+.search-input {
+  @apply w-full bg-[#DCD0B8] bg-opacity-50 px-4 py-3 rounded-lg text-[#4A4233] placeholder-[#8B7355] 
+  border-2 border-[#B4A284] focus:border-[#8B7355] focus:outline-none;
+}
+
+.search-button {
+  @apply px-6 py-3 bg-[#B4A284] hover:bg-[#8B7355] rounded-lg text-white font-bold 
+  transition-all duration-300 border-2 border-[#8B7355];
+}
+
+.location-button {
+  @apply p-3 bg-[#B4A284] hover:bg-[#8B7355] rounded-lg text-white 
+  transition-all duration-300 border-2 border-[#8B7355];
+}
+
+.suggestion-item {
+  @apply p-3 bg-[#DCD0B8] hover:bg-[#E8DCC4] cursor-pointer text-[#4A4233];
+}
+
+.weather-container {
+  @apply space-y-6;
+}
+
+.current-weather {
+  @apply bg-opacity-20 backdrop-blur-sm bg-[#E8DCC4] rounded-xl p-6 border-4 border-[#B4A284];
+  box-shadow: 0 0 20px rgba(180, 162, 132, 0.3);
+}
+
+.city-name {
+  @apply text-2xl text-[#4A4233] mb-4;
+}
+
+.temp-display {
+  @apply flex items-center justify-center gap-4 mb-4;
+}
+
+.current-temp {
+  @apply text-6xl text-[#8B7355] font-bold;
+}
+
+.condition-text {
+  @apply text-lg text-[#4A4233] mb-4;
+}
+
+.weather-details {
+  @apply grid grid-cols-2 gap-4;
+}
+
+.detail-item {
+  @apply flex flex-col items-center bg-[#DCD0B8] bg-opacity-50 p-4 rounded-lg;
+}
+
+.forecast-container {
+  @apply grid grid-cols-1 md:grid-cols-3 gap-4;
+}
+
+.forecast-card {
+  @apply bg-opacity-20 backdrop-blur-sm bg-[#E8DCC4] rounded-xl p-4 border-2 border-[#B4A284]
+  flex flex-col items-center transition-transform duration-300 hover:transform hover:scale-105;
+}
+
+.date {
+  @apply text-sm text-[#8B7355] mb-2;
+}
+
+.temp-range {
+  @apply flex gap-2 mt-2;
+}
+
+.max-temp {
+  @apply text-[#8B7355];
+}
+
+.min-temp {
+  @apply text-[#B4A284];
+}
+
+.forecast-condition {
+  @apply text-xs text-center text-[#4A4233] mt-2;
+}
+
+.error-container {
+  @apply bg-red-100 bg-opacity-50 text-red-800 p-4 rounded-lg border-2 border-red-300;
+}
+
+.pixel-loading {
+  @apply flex gap-2;
+}
+
+.pixel {
+  @apply w-4 h-4 bg-[#B4A284];
+  animation: pixel-bounce 0.5s infinite alternate;
+}
+
+.pixel:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.pixel:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes pixel-bounce {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-10px);
+  }
+}
+
+/* Autosuggest styles */
+.react-autosuggest__container {
+  @apply relative flex-1;
+}
+
+.react-autosuggest__suggestions-container--open {
+  @apply absolute w-full bg-[#DCD0B8] mt-1 rounded-lg border-2 border-[#B4A284] z-10;
+}
+
+.react-autosuggest__suggestions-list {
+  @apply m-0 p-0 list-none;
+}
+
+.react-autosuggest__suggestion {
+  @apply cursor-pointer;
+}
+
+.react-autosuggest__suggestion--highlighted {
+  @apply bg-[#E8DCC4];
+}
